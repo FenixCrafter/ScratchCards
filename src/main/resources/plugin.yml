@@ -6,9 +6,9 @@ authors: [ FenixCrafter ]
 description: Adds scratch cards to minecraft
 
 commands:
-  giveScratchcard:
-    description: Give a scratch card
-    usage: /<command>
-  scratchcardShop:
-    description: Opens the shop
+  GeefKraslot:
+    description: Geef een persoon een kraslot
+    usage: /<command> (player)
+  KraslotenShop:
+    description: Opend de winkel
     usage: /<command>
