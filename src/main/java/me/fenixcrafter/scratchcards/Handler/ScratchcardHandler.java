@@ -15,16 +15,15 @@ public class ScratchcardHandler extends ScratchCardItem implements Listener
     @EventHandler
     public void onScratchcardUse(PlayerInteractEvent e)
     {
-        System.out.println("1");
         Player player = e.getPlayer();
         System.out.println(player.getInventory().getItemInMainHand());
         System.out.println(ScratchCardItem.getItem());
 
 
-        if (player.getInventory().getItemInMainHand() != null && player.getInventory().getItemInMainHand() == ScratchCardItem.getItem())
+        if (player.getInventory().getItemInMainHand() != null && player.getInventory().getItemInMainHand().isSimilar(ScratchCardItem.getItem()))
         {
             System.out.println("2");
-            player.getInventory().remove(player.getInventory().getItemInMainHand());
+            player.getInventory().removeItem(ScratchCardItem.getItem());
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&2Je hebt gewonnen"));
 
         } else {
