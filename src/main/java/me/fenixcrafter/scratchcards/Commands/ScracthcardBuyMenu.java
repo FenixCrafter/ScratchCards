@@ -3,7 +3,6 @@ package me.fenixcrafter.scratchcards.Commands;
 import me.fenixcrafter.scratchcards.CustomItems.ScratchCardItem;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,16 +24,15 @@ public class ScracthcardBuyMenu implements CommandExecutor
         {
             Inventory scratchcardShop = Bukkit.createInventory(p, 27, ChatColor.translateAlternateColorCodes('&', "&6&lScratchcard shop"));
 
-            ItemStack opvulling = new ItemStack(Material.BLACK_STAINED_GLASS);
-            ItemMeta opvullingMeta = opvulling.getItemMeta();
+//            ItemStack opvulling = new ItemStack(Material.);
+//            ItemMeta opvullingMeta = opvulling.getItemMeta();
 
-            opvullingMeta.setDisplayName(" ");
-            opvulling.setItemMeta(opvullingMeta);
+//            opvullingMeta.setDisplayName(" ");
+//            opvulling.setItemMeta(opvullingMeta);
 
-            for(int x = 0;x <= 26;x++){
-            scratchcardShop.setItem(x,opvulling);
-        }
-
+//            for(int x = 0;x <= 26;x++){
+//            scratchcardShop.setItem(x,opvulling);
+//        }
             ItemStack card = ScratchCardItem.getItem();
             ItemMeta cardMeta = card.getItemMeta();
             ArrayList<String> lore = new ArrayList<>();
@@ -42,7 +40,7 @@ public class ScracthcardBuyMenu implements CommandExecutor
 
             cardMeta.setLore(lore);
             card.setItemMeta(cardMeta);
-            scratchcardShop.setItem(13,card);
+            scratchcardShop.setItem(13, card);
             p.openInventory(scratchcardShop);
         }
         return true;

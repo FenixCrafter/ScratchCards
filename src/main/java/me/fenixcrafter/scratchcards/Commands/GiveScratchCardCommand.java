@@ -26,8 +26,8 @@ public class GiveScratchCardCommand extends ScratchCardItem implements CommandEx
                 Player target = sender.getServer().getPlayer(args[0]);
 
                 target.getInventory().addItem(ScratchCardItem.getItem());
-
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lJe hebt " + target.getDisplayName() + " een kraslot gegeven!"));
+                target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aJe hebt een kraslot gekregen!"));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lJe hebt &6&l" + target.getDisplayName() + " &4&leen kraslot gegeven!"));
             }
         }
 

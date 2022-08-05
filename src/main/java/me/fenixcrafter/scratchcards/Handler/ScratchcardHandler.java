@@ -10,6 +10,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import java.util.Random;
+
 
 public class ScratchcardHandler extends ScratchCardItem implements Listener
 {
@@ -21,11 +23,10 @@ public class ScratchcardHandler extends ScratchCardItem implements Listener
         if (player.getInventory().getItemInMainHand() != null && player.getInventory().getItemInMainHand().isSimilar(ScratchCardItem.getItem()))
         {
 
-            int chanse = ScratchCards.getPlugin().getConfig().getInt("Chanse");
-            double num = Math.random();
-            int myRandInt = (int) (num * chanse + 1);
+            Random rn = new Random();
+            int answer = rn.nextInt(10) + 1;
 
-            if (myRandInt == 1)
+            if (answer == 1)
             {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&2Je hebt " + ScratchCards.getPlugin().getConfig().getInt("PayOut") + " gewonnen"));
                 Economy econ = ScratchCards.getEconomy();

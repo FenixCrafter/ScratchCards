@@ -1,6 +1,8 @@
 package me.fenixcrafter.scratchcards.Handler;
 
 import me.fenixcrafter.scratchcards.CustomItems.ScratchCardItem;
+import me.fenixcrafter.scratchcards.ScratchCards;
+import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -9,7 +11,6 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class ScratchcardShopHandler implements Listener
 {
-
     @EventHandler
     public void onShopItemClick(InventoryClickEvent e)
     {
@@ -19,9 +20,18 @@ public class ScratchcardShopHandler implements Listener
             e.setCancelled(true);
             Player p = (Player) e.getView().getPlayer();
 
-            p.getInventory().addItem(ScratchCardItem.getItem());
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aJe hebt een kraslot gekocht!"));
+            if (ScratchCards.getEconomy().getBalance(p.getName()) >= 1000.0)
+            {
 
+
+                p.getInventory().addItem(ScratchCardItem.getItem());
+                EconomyResponse r = ScratchCards.getEconomy().withdrawPlayer(p.getName(), ScratchCards.getPlugin().getConfig().getInt("PayOut"));
+
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aJe hebt een kraslot gekocht voor " + ScratchCards.getPlugin().getConfig().getInt("PayOut") + " euro"));
+            } else
+            {
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aJe hebt niet genoeg geld voor een kraslot"));
+            }
         }
     }
 }

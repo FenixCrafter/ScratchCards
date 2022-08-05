@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 
 public final class ScratchCards extends JavaPlugin
 {
-
     private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy econ = null;
 
