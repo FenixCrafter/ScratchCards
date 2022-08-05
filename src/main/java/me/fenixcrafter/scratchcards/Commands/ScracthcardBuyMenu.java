@@ -25,7 +25,7 @@ public class ScracthcardBuyMenu implements CommandExecutor
         {
             Inventory scratchcardShop = Bukkit.createInventory(p, 27, ChatColor.translateAlternateColorCodes('&', "&6&lScratchcard shop"));
 
-            ItemStack opvulling = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
+            ItemStack opvulling = new ItemStack(Material.BLACK_STAINED_GLASS);
             ItemMeta opvullingMeta = opvulling.getItemMeta();
 
             opvullingMeta.setDisplayName(" ");
