@@ -1,0 +1,14 @@
+name: ScratchCards
+version: '${project.version}'
+main: me.fenixcrafter.scratchcards.ScratchCards
+api-version: 1.12.2
+authors: [ FenixCrafter ]
+description: Adds scratch cards to minecraft
+
+commands:
+  giveScratchcard:
+    description: Give a scratch card
+    usage: /<command>
+  scratchcardShop:
+    description: Opens the shop
+    usage: /<command>

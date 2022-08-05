@@ -1,0 +1,8 @@
+#Change the name of the card
+Name: 'Scratch card'
+
+#Change the win chance
+Chance: 100
+
+#Change the amount u get when u win
+PayOut: 1000
