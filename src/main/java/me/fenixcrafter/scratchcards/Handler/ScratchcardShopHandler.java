@@ -15,7 +15,7 @@ public class ScratchcardShopHandler implements Listener
     public void onShopItemClick(InventoryClickEvent e)
     {
 
-        if (e.getView().getTitle().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', "&6&lScratchcard shop")))
+        if (e.getView().getTitle().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', "&6&lKrasloten winkel")))
         {
             e.setCancelled(true);
             Player p = (Player) e.getView().getPlayer();
