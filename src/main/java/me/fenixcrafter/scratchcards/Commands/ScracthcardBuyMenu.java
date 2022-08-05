@@ -1,6 +1,7 @@
 package me.fenixcrafter.scratchcards.Commands;
 
 import me.fenixcrafter.scratchcards.CustomItems.ScratchCardItem;
+import me.fenixcrafter.scratchcards.ScratchCards;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -22,7 +23,7 @@ public class ScracthcardBuyMenu implements CommandExecutor
 
         if (sender instanceof Player p)
         {
-            Inventory scratchcardShop = Bukkit.createInventory(p, 27, ChatColor.translateAlternateColorCodes('&', "&6&lScratchcard shop"));
+            Inventory scratchcardShop = Bukkit.createInventory(p, 27, ChatColor.translateAlternateColorCodes('&', "&6&lKrasloten winkel"));
 
 //            ItemStack opvulling = new ItemStack(Material.);
 //            ItemMeta opvullingMeta = opvulling.getItemMeta();
@@ -36,7 +37,7 @@ public class ScracthcardBuyMenu implements CommandExecutor
             ItemStack card = ScratchCardItem.getItem();
             ItemMeta cardMeta = card.getItemMeta();
             ArrayList<String> lore = new ArrayList<>();
-            lore.add(ChatColor.translateAlternateColorCodes('&', "&2&l$1000"));
+            lore.add(ChatColor.translateAlternateColorCodes('&', "&2&l$" + ScratchCards.getPlugin().getConfig().getDouble("Cost")));
 
             cardMeta.setLore(lore);
             card.setItemMeta(cardMeta);

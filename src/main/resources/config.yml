@@ -1,5 +1,5 @@
-#Change the win chance
-Chance: 100
-
+#Chaneg the cost
+Cost: 1000.0
 #Change the amount u get when u win
-PayOut: 1000
+PayOut: 100000000
+

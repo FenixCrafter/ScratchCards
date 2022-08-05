@@ -44,8 +44,8 @@ public final class ScratchCards extends JavaPlugin
         plugin = this;
         getConfig().options().copyDefaults();
         saveDefaultConfig();
-        getCommand("giveScratchcard").setExecutor(new GiveScratchCardCommand());
-        getCommand("scratchcardShop").setExecutor(new ScracthcardBuyMenu());
+        getCommand("GeefKraslot").setExecutor(new GiveScratchCardCommand());
+        getCommand("KraslotenShop").setExecutor(new ScracthcardBuyMenu());
         getServer().getPluginManager().registerEvents(new ScratchcardHandler(), this);
         getServer().getPluginManager().registerEvents(new ScratchcardShopHandler(), this);
 

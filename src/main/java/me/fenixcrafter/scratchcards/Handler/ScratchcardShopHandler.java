@@ -20,17 +20,17 @@ public class ScratchcardShopHandler implements Listener
             e.setCancelled(true);
             Player p = (Player) e.getView().getPlayer();
 
-            if (ScratchCards.getEconomy().getBalance(p.getName()) >= 1000.0)
+            if (ScratchCards.getEconomy().getBalance(p.getName()) >= ScratchCards.getPlugin().getConfig().getDouble("Cost"))
             {
 
 
                 p.getInventory().addItem(ScratchCardItem.getItem());
                 EconomyResponse r = ScratchCards.getEconomy().withdrawPlayer(p.getName(), ScratchCards.getPlugin().getConfig().getInt("PayOut"));
 
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aJe hebt een kraslot gekocht voor " + ScratchCards.getPlugin().getConfig().getInt("PayOut") + " euro"));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aJe hebt een kraslot gekocht voor " + ScratchCards.getPlugin().getConfig().get("PayOut") + " euro"));
             } else
             {
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aJe hebt niet genoeg geld voor een kraslot"));
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cJe hebt niet genoeg geld voor een kraslot"));
             }
         }
     }
